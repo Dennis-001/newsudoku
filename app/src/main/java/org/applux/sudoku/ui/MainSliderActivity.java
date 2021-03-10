@@ -109,7 +109,7 @@ public class MainSliderActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = settings.edit();
         editor.putBoolean("savesChanged", true);
         editor.apply();
-        refreshContinueButton();
+        //refreshContinueButton();
     }
     private void addBottomDots(int currentPage) {
         dots = new TextView[layouts.length];

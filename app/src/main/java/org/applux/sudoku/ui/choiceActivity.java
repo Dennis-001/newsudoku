@@ -27,13 +27,15 @@ import org.applux.sudoku.ui.view.R;
 import java.util.List;
 
 import static org.applux.sudoku.ui.BaseActivity.MAIN_CONTENT_FADEOUT_DURATION;
+import static org.applux.sudoku.ui.TutorialActivity.ACTION_SHOW_ANYWAYS;
 
 public class choiceActivity extends AppCompatActivity {
     SharedPreferences settings;
     private ViewPager viewPager;
     ImageView arrowLeft, arrowRight;
+
+
     Handler mHandler;
-    private PrefManager prefManager;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +86,7 @@ public class choiceActivity extends AppCompatActivity {
     }
     public void onClick(View view) {
 
-        Intent i = null;
+        Intent intent;
 
         switch(view.getId()) {
             case R.id.arrow_left:
@@ -94,30 +96,17 @@ public class choiceActivity extends AppCompatActivity {
                 viewPager.arrowScroll(View.FOCUS_RIGHT);
                 break;
             case R.id.next:
-                i = new Intent(this, MainSliderActivity.class);
+                intent = new Intent(this, MainSliderActivity.class);
+                intent.setAction(ACTION_SHOW_ANYWAYS);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
                 break;
 
-            default:
-        }
-        final Intent intent = i;
-
-        if(intent != null) {
-
-            View mainContent = findViewById(R.id.main_content);
-            if (mainContent != null) {
-                mainContent.animate().alpha(0).setDuration(MAIN_CONTENT_FADEOUT_DURATION);
-            }
-
-
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    startActivity(intent);
-                }
-            }, MAIN_CONTENT_FADEOUT_DURATION);
 
         }
+
     }
+    
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 

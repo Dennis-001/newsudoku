@@ -38,7 +38,7 @@ import org.applux.sudoku.ui.view.R;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MainSliderActivity extends AppCompatActivity {
+public class MainSliderActivity extends BaseActivity {
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
     private LinearLayout dotsLayout;
@@ -66,7 +66,7 @@ public class MainSliderActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        viewPager = (ViewPager) findViewById(R.id.main_view_pager);
+        viewPager = (ViewPager) findViewById(R.id.a_view_pager);
         dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
         btnPrevious = (Button) findViewById(R.id.btn_previous);
         btnNext = (Button) findViewById(R.id.btn_next);
@@ -174,7 +174,9 @@ public class MainSliderActivity extends AppCompatActivity {
             }
         }
 
-
+    private int getItem(int i) {
+        return viewPager.getCurrentItem() + i;
+    }
 
 
 
@@ -183,7 +185,7 @@ public class MainSliderActivity extends AppCompatActivity {
         Intent i = null;
 
         switch(view.getId()) {
-            case R.id.playButton:
+            case R.id.play:
                 GameType gameType = GameType.getValidGameTypes().get(viewPager.getCurrentItem());
                 int index = difficultyBar.getProgress()-1;
                 GameDifficulty gameDifficulty = GameDifficulty.getValidDifficultyList().get(index < 0 ? 0 : index);
@@ -208,6 +210,23 @@ public class MainSliderActivity extends AppCompatActivity {
                 }
                 break;
             default:
+        }
+        final Intent intent = i;
+
+        if(intent != null) {
+
+            View mainContent = findViewById(R.id.main_content);
+            if (mainContent != null) {
+                mainContent.animate().alpha(0).setDuration(MAIN_CONTENT_FADEOUT_DURATION);
+            }
+
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startActivity(intent);
+                }
+            }, MAIN_CONTENT_FADEOUT_DURATION);
+
         }
     }
 
@@ -248,7 +267,8 @@ public class MainSliderActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return layouts.length;
+            // Show 3 total pages.
+            return GameType.getValidGameTypes().size();
         }
 
         @Override
@@ -262,6 +282,7 @@ public class MainSliderActivity extends AppCompatActivity {
             View view = (View) object;
             container.removeView(view);
         }
+
     }
 
 

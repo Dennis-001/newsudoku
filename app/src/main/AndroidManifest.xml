@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.applux.sudoku.ui.view">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name="org.applux.sudoku.SudokuApp">
+        <activity
+            android:name="org.applux.sudoku.ui.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.applux.sudoku.ui.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.applux.sudoku.ui.choiceActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name="org.applux.sudoku.ui.MainSliderActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.applux.sudoku.ui.TutorialActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.applux.sudoku.ui.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="org.applux.sudoku.ui.MainActivity" />
+        <activity
+            android:name="org.applux.sudoku.ui.GameActivity"
+            android:label="@string/title_activity_game_view"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="org.applux.sudoku.ui.AboutActivity" />
+        <activity android:name="org.applux.sudoku.ui.LoadGameActivity" />
+        <activity
+            android:name="org.applux.sudoku.ui.StatsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="org.applux.sudoku.ui.HelpActivity"
+            android:label="@string/title_activity_help" />
+        <service
+            android:name="org.applux.sudoku.controller.GeneratorService"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>

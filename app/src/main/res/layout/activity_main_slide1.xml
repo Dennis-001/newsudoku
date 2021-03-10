@@ -7,10 +7,18 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="Select the type of sudoku to play"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp"/>
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
+        android:layout_height="200dp"
         android:layoutDirection="ltr"
         android:layout_weight="4">
 
@@ -51,14 +59,14 @@
 
     <Button
         android:id="@+id/next"
-        android:layout_width="339dp"
-        android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_gravity="bottom"
         android:layout_marginLeft="@dimen/main_button_padding"
         android:layout_marginRight="@dimen/main_button_padding"
-        android:layout_weight="3"
+        android:layout_weight="1"
         android:background="@drawable/standalone_button"
-        android:elevation="10dp"
+
         android:onClick="onClick"
         android:text="next"
         android:textColor="@color/white"

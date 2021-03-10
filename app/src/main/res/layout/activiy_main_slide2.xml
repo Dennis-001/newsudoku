@@ -13,7 +13,14 @@
         android:id="@+id/a_view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"/>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="Select level of difficulty"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp"/>
 
 
 
@@ -33,7 +40,8 @@
             android:numStars="3"
             android:rating="1"
             android:stepSize="1"
-            style="@style/RatingBar"/>
+            style="@style/RatingBar"
+            android:paddingBottom="20dp"/>
         <Button
             android:textColor="@color/white"
             android:layout_width="match_parent"
@@ -49,7 +57,8 @@
             android:onClick="onClick"
             android:clickable="false"
             android:elevation="10dp"
-            android:background="@drawable/standalone_button"/>
+            android:background="@drawable/standalone_button"
+            android:layout_marginTop="200dp"/>
 
 
 </LinearLayout>

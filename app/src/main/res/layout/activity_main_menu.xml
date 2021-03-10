@@ -51,7 +51,7 @@
                 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     xmlns:tools="http://schemas.android.com/tools"
                     android:layout_width="match_parent"
-                    android:layout_height="0px"
+                    android:layout_height="match_parent"
                     android:layout_weight="6"
                     android:paddingLeft="@dimen/activity_horizontal_margin"
                     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -62,14 +62,26 @@
                     android:weightSum="8"
                     android:divider="#000"
                     android:baselineAligned="false"
-                    android:gravity="center_horizontal">
+                    android:gravity="center_horizontal"
+                    android:background="@color/middleblue">
 
+                    <ImageView
 
+                        android:layout_width="500dp"
+                        android:layout_height="500dp"
+                        app:srcCompat="@drawable/splash_icon"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:padding="@dimen/activity_horizontal_margin"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_centerVertical="true"
+                        android:onClick="onClick"/>
 
                     <Button
                         android:textColor="@color/white"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/main_button_padding"
                         android:layout_marginRight="@dimen/main_button_padding"
                         android:text="@string/new_game"
@@ -77,7 +89,7 @@
                         android:textSize="@dimen/text_size"
                         android:id="@+id/new_game"
                         android:layout_gravity="center_horizontal"
-                        android:layout_weight="3"
+                        android:layout_weight="2"
                         android:onClick="onClick"
                         android:clickable="false"
                         android:elevation="10dp"
@@ -87,7 +99,7 @@
                         android:textColor="@color/white"
                         android:layout_marginTop="20dp"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/main_button_padding"
                         android:layout_marginRight="@dimen/main_button_padding"
                         android:text="@string/menu_continue_game"
@@ -95,7 +107,7 @@
                         android:textSize="@dimen/text_size"
                         android:id="@+id/continueButton"
                         android:layout_gravity="center_horizontal"
-                        android:layout_weight="3"
+                        android:layout_weight="2"
                         android:onClick="onClick"
                         android:capitalize="none"
                         android:clickable="false"

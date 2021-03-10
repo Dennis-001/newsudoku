@@ -12,7 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
+
         android:paddingBottom="7dp"
         android:paddingTop="7dp">
 
@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Sudoku"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:layout_centerVertical="true"

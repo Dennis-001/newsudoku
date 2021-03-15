@@ -256,7 +256,7 @@ public class GeneratorService extends IntentService {
         builder.setColor(ContextCompat.getColor(this, R.color.colorAccent));
         builder.setPriority(NotificationCompat.PRIORITY_HIGH);
         builder.setWhen(0);
-        builder.setSmallIcon(R.drawable.splash_icon);
+        builder.setSmallIcon(R.mipmap.splash_icon);
         startForeground(50, builder.build());
     }
     @Override
